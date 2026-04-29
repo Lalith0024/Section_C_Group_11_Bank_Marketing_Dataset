@@ -1,6 +1,6 @@
 # Lalithendra Kasula - Data Engineering & Analytics Portfolio
 
-Live Portfolio: [https://lalith0024.github.io/portfolio-data-analyst-engineer/](https://lalith0024.github.io/portfolio-data-analyst-engineer/)
+Live Portfolio: [https://portfolio-data-analyst-engineer.vercel.app/](https://portfolio-data-analyst-engineer.vercel.app/)
 
 This is my professional Data Engineering & Analytics portfolio, custom-built as a high-performance static website using vanilla HTML, CSS, and JavaScript. It serves as a central hub to present my case studies, showcasing my complete data lifecycle capabilities—from building robust ETL pipelines and cleaning unstructured datasets, to engineering interactive business intelligence dashboards.
 
