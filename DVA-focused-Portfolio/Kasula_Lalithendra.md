@@ -51,13 +51,6 @@ This portfolio highlights expertise across the modern data stack:
 - **Data Engineering:** ETL Pipelines, Data Cleaning, Deduplication, Feature Engineering
 - **Web/Hosting:** HTML, CSS, JavaScript, GitHub Pages
 
-## Repository Structure
-
-- `index.html` - The main single-page portfolio layout featuring a modern, premium UI.
-- `style.css` - Custom styling, responsive design, and CSS Grid/Bento layouts.
-- `script.js` - Interactivity, smooth scrolling, and custom UI animations.
-- `favicon.svg` - Custom data-themed vector favicon.
-- `assets/images/` - High-fidelity dashboard screenshots and mockups used in the portfolio.
 
 ## Tools Used
 
