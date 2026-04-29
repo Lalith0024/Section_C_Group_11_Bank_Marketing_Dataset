@@ -84,5 +84,12 @@ Use this outline to draft the final written report before exporting it as `proje
 - Suggested future work
 
 ## 14. Contribution Matrix
-
-- Match this section with GitHub commit and PR history
+ 
+ | Team Member            | Dataset & Sourcing | ETL & Cleaning | EDA & Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT       |
+ | :--------------------- | :----------------- | :------------- | :------------- | :------------------- | :---------------- | :------------- | :-------- |
+ | **Abhayanth K**        | Support            | Support        | Support        | Support              | Support           | **Owner**      | Support   |
+ | **Kasula Lalithendra** | Support            | **Owner**      | **Owner**      | Support              | Support           | Support        | Support   |
+ | **Jagruthi Pulumati**  | **Owner**          | **Owner**      | Support        | Support              | **Owner**         | Support        | **Owner** |
+ | **Sachin Jaiswal**     | Support            | **Owner**      | Support        | Support              | Support           | Support        | **Owner** |
+ | **Ankit Raj Singh**    | Support            | Support        | Support        | **Owner**            | Support           | Support        | Support   |
+ | **Varun Sharma**       | —                  | Support        | Support        | Support              | —                 | Support        | —         |
