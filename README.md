@@ -13,15 +13,15 @@ The core question is:
 
 ## Project Highlights
 
-| Metric | Value |
-|---|---:|
-| Raw records | 41,188 |
-| Cleaned records | 41,176 |
-| Cleaned columns | 27 |
-| Successful subscriptions | 4,639 |
-| Overall conversion rate | 11.27% |
-| Tableau dashboards | 4 |
-| Statistical tests validated | 6 |
+| Metric                      |  Value |
+| --------------------------- | -----: |
+| Raw records                 | 41,188 |
+| Cleaned records             | 41,176 |
+| Cleaned columns             |     27 |
+| Successful subscriptions    |  4,639 |
+| Overall conversion rate     | 11.27% |
+| Tableau dashboards          |      4 |
+| Statistical tests validated |      6 |
 
 The dashboard story shows that conversion is not random. Prior campaign success, contact channel, call pressure, customer profile, and interest-rate environment all materially affect subscription outcomes.
 
@@ -100,17 +100,17 @@ Help marketing managers decide whom to contact, how often to contact them, which
 
 ## Dataset
 
-| Attribute | Details |
-|---|---|
-| Dataset | Bank Marketing Campaign Dataset |
-| Source | UCI Machine Learning Repository |
-| Institution | Portuguese banking institution |
-| Raw file | [`data/raw/raw_dataset.csv`](data/raw/raw_dataset.csv) |
-| Cleaned file | [`data/processed/cleaned_bank_data.csv`](data/processed/cleaned_bank_data.csv) |
-| Raw shape | 41,188 rows x 21 columns |
-| Clean shape | 41,176 rows x 27 columns |
-| Target variable | `subscription_flag` |
-| Granularity | One row per customer campaign contact |
+| Attribute       | Details                                                                        |
+| --------------- | ------------------------------------------------------------------------------ |
+| Dataset         | Bank Marketing Campaign Dataset                                                |
+| Source          | UCI Machine Learning Repository                                                |
+| Institution     | Portuguese banking institution                                                 |
+| Raw file        | [`data/raw/raw_dataset.csv`](data/raw/raw_dataset.csv)                         |
+| Cleaned file    | [`data/processed/cleaned_bank_data.csv`](data/processed/cleaned_bank_data.csv) |
+| Raw shape       | 41,188 rows x 21 columns                                                       |
+| Clean shape     | 41,176 rows x 27 columns                                                       |
+| Target variable | `subscription_flag`                                                            |
+| Granularity     | One row per customer campaign contact                                          |
 
 For detailed column definitions, cleaning notes, derived variables, and statistical test mapping, see [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
@@ -140,15 +140,15 @@ Key cleaning decisions:
 
 ## KPI Framework
 
-| KPI | Definition | Business Use |
-|---|---|---|
-| Conversion Rate | Successful subscriptions / total contacted customers | Primary campaign success metric |
-| Successful Customers | Count of customers with `subscription_flag = 1` | Measures campaign output |
-| Contact Channel Conversion | Conversion rate by `contact_type` | Compares cellular vs telephone performance |
-| Call Intensity Conversion | Conversion rate by `call_intensity` | Finds when additional outreach becomes counterproductive |
-| Prior Success Conversion | Conversion rate where previous campaign outcome was successful | Identifies high-value retargeting group |
-| Cold Contact Conversion | Conversion rate for customers with no previous campaign success | Benchmarks new-customer outreach |
-| Rate Environment Conversion | Conversion rate by low, medium, or high interest-rate environment | Connects marketing timing to macroeconomic context |
+| KPI                         | Definition                                                        | Business Use                                             |
+| --------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------- |
+| Conversion Rate             | Successful subscriptions / total contacted customers              | Primary campaign success metric                          |
+| Successful Customers        | Count of customers with `subscription_flag = 1`                   | Measures campaign output                                 |
+| Contact Channel Conversion  | Conversion rate by `contact_type`                                 | Compares cellular vs telephone performance               |
+| Call Intensity Conversion   | Conversion rate by `call_intensity`                               | Finds when additional outreach becomes counterproductive |
+| Prior Success Conversion    | Conversion rate where previous campaign outcome was successful    | Identifies high-value retargeting group                  |
+| Cold Contact Conversion     | Conversion rate for customers with no previous campaign success   | Benchmarks new-customer outreach                         |
+| Rate Environment Conversion | Conversion rate by low, medium, or high interest-rate environment | Connects marketing timing to macroeconomic context       |
 
 ---
 
@@ -156,14 +156,14 @@ Key cleaning decisions:
 
 The project validates dashboard patterns using formal tests at alpha = 0.05.
 
-| Question | Feature | Test | Result | Dashboard |
-|---|---|---|---|---|
-| Do age groups convert differently? | `age_group` | ANOVA | Significant | Customer Profile |
-| Is job type associated with subscription? | `job_type` | Chi-Square | Significant | Customer Profile |
-| Does call intensity affect conversion? | `call_intensity` | ANOVA | Significant | Campaign Effectiveness |
-| Does contact channel matter? | `contact_type` | Chi-Square | Significant | Campaign Effectiveness |
-| Does prior campaign success predict current success? | `prev_success_flag` | Chi-Square | Highly significant | Interaction History |
-| Does rate environment affect subscription? | `rate_environment` | ANOVA | Significant | Economic Impact |
+| Question                                             | Feature             | Test       | Result             | Dashboard              |
+| ---------------------------------------------------- | ------------------- | ---------- | ------------------ | ---------------------- |
+| Do age groups convert differently?                   | `age_group`         | ANOVA      | Significant        | Customer Profile       |
+| Is job type associated with subscription?            | `job_type`          | Chi-Square | Significant        | Customer Profile       |
+| Does call intensity affect conversion?               | `call_intensity`    | ANOVA      | Significant        | Campaign Effectiveness |
+| Does contact channel matter?                         | `contact_type`      | Chi-Square | Significant        | Campaign Effectiveness |
+| Does prior campaign success predict current success? | `prev_success_flag` | Chi-Square | Highly significant | Interaction History    |
+| Does rate environment affect subscription?           | `rate_environment`  | ANOVA      | Significant        | Economic Impact        |
 
 The statistical analysis confirms that the Tableau insights are not only visual patterns: customer demographics, campaign strategy, relationship history, and macroeconomic conditions all measurably influence subscription outcomes.
 
@@ -186,13 +186,13 @@ The statistical analysis confirms that the Tableau insights are not only visual 
 
 ## Recommendations
 
-| # | Recommendation | Evidence | Expected Impact |
-|---|---|---|---|
-| 1 | Prioritize customers with previous campaign success and recent contact history. | Prior-success conversion is **65.11%**; recently contacted conversion is **65.76%**. | Higher conversion with fewer wasted calls. |
-| 2 | Shift campaign contact strategy toward cellular outreach. | Cellular conversion is **14.74%** vs **5.23%** for telephone. | Better channel efficiency and higher subscription yield. |
-| 3 | Limit repeated calling and avoid over-contacting customers. | Conversion drops from **13.04%** at one call to **5.49%** at high intensity. | Lower customer fatigue and better agent productivity. |
-| 4 | Segment campaign messaging for students and retired customers. | Students convert at **31.43%** and retired customers at **25.26%**. | Stronger targeting of naturally receptive groups. |
-| 5 | Time aggressive campaigns during low-rate environments. | Low-rate conversion is **24.02%** vs **4.83%** in high-rate conditions. | Improved campaign timing and budget allocation. |
+| #   | Recommendation                                                                  | Evidence                                                                             | Expected Impact                                          |
+| --- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------- |
+| 1   | Prioritize customers with previous campaign success and recent contact history. | Prior-success conversion is **65.11%**; recently contacted conversion is **65.76%**. | Higher conversion with fewer wasted calls.               |
+| 2   | Shift campaign contact strategy toward cellular outreach.                       | Cellular conversion is **14.74%** vs **5.23%** for telephone.                        | Better channel efficiency and higher subscription yield. |
+| 3   | Limit repeated calling and avoid over-contacting customers.                     | Conversion drops from **13.04%** at one call to **5.49%** at high intensity.         | Lower customer fatigue and better agent productivity.    |
+| 4   | Segment campaign messaging for students and retired customers.                  | Students convert at **31.43%** and retired customers at **25.26%**.                  | Stronger targeting of naturally receptive groups.        |
+| 5   | Time aggressive campaigns during low-rate environments.                         | Low-rate conversion is **24.02%** vs **4.83%** in high-rate conditions.              | Improved campaign timing and budget allocation.          |
 
 ---
 
@@ -244,13 +244,13 @@ Section_C_Group_11_Bank_Marketing_Dataset/
 
 ## Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| Python | Data extraction, cleaning, EDA, statistical analysis |
-| Jupyter Notebook | Reproducible analytical workflow |
-| Tableau | Interactive dashboard design and presentation |
-| GitHub | Version control and project collaboration |
-| CSV | Raw and processed data storage |
+| Tool             | Purpose                                              |
+| ---------------- | ---------------------------------------------------- |
+| Python           | Data extraction, cleaning, EDA, statistical analysis |
+| Jupyter Notebook | Reproducible analytical workflow                     |
+| Tableau          | Interactive dashboard design and presentation        |
+| GitHub           | Version control and project collaboration            |
+| CSV              | Raw and processed data storage                       |
 
 Recommended Python libraries are listed in [`requirements.txt`](requirements.txt).
 
@@ -285,3 +285,27 @@ Open the notebooks in numeric order from `01_extraction.ipynb` through `05_final
 The campaign should move from broad outreach to evidence-led targeting. The strongest opportunities are retargeting customers with successful prior outcomes, using cellular contact, reducing overcalling, prioritizing high-conversion customer segments, and timing campaigns around favorable interest-rate environments.
 
 Together, the Python analysis and Tableau dashboards provide a complete decision framework for improving term deposit campaign conversion.
+
+---
+
+## Contribution Matrix
+
+This table must match evidence in GitHub Insights, PR history, and committed files.
+
+| Team Member            | Dataset and Sourcing | ETL and Cleaning | EDA and Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT       |
+| :--------------------- | :------------------- | :--------------- | :--------------- | :------------------- | :---------------- | :------------- | :-------- |
+| **Abhayanth K**        | Support              | Support          | Support          | Support              | Support           | **Owner**      | Support   |
+| **Kasula Lalithendra** | Support              | **Owner**        | **Owner**        | Support              | Support           | Support        | Support   |
+| **Jagruthi Pulumati**  | **Owner**            | Support          | Support          | Support              | **Owner**         | Support        | Support   |
+| **Sachin Jaiswal**     | Support              | Support          | Support          | Support              | Support           | Support        | **Owner** |
+| **Ankit Raj Singh**    | Support              | Support          | Support          | **Owner**            | Support           | Support        | Support   |
+| **Varun Sharma**       | —                    | —                | —                | —                    | —                 | Support        | —         |
+
+**Declaration:** We confirm that the above contribution details are accurate and verifiable through GitHub Insights, PR history, and submitted artifacts.
+
+**Team Lead Name:** Jagruthi Pulumati  
+**Date:** 29 April 2026
+
+---
+
+**Newton School of Technology - Data Visualization & Analytics | Capstone 2**

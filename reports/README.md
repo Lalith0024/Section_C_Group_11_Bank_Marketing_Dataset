@@ -1,8 +1,10 @@
-Final exported deliverables should be stored in this folder.
+# Project Reports and Deliverables
 
-Expected final files:
+This directory contains the final exported deliverables for the Bank Marketing Campaign Analytics project.
 
-- `project_report.pdf`
-- `presentation.pdf`
+## 🎓 Final Deliverables
 
-Use the markdown templates in this folder as drafting guides before exporting the final PDFs.
+The following files are the final outputs of the project:
+
+- `Report.pdf`: The complete technical and business report.
+- `Presentation.pdf`: The final presentation slide deck.
