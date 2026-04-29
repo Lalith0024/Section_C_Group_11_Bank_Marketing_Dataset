@@ -33,7 +33,7 @@ The Tableau workbook is available at [`tableau/Bank Marketing Dataset.twbx`](tab
 
 ### 1. Customer Profile
 
-![Customer Profile](tableau/screenshots/Customer%20Profile.jpg)
+![Customer Profile](tableau/screenshots/Customer%20Profile.png)
 
 This dashboard profiles the customer base by geography, job type, education, marital status, and loan ownership. It provides the top-level business context before moving into campaign performance.
 
