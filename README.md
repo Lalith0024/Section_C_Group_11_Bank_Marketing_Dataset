@@ -1,75 +1,100 @@
-# NST DVA Capstone 2 - Project Repository
+# Bank Marketing Campaign Analytics
 
-> **Newton School of Technology | Data Visualization & Analytics**
-> A 2-week industry simulation capstone using Python, GitHub, and Tableau to convert raw data into actionable business intelligence.
+> Newton School of Technology | Data Visualization & Analytics Capstone  
+> Section C, Group 11
 
----
+This project analyzes a Portuguese bank's direct marketing campaign to understand what drives term deposit subscriptions. The work combines Python-based ETL, exploratory analysis, statistical validation, and a four-page Tableau dashboard suite built for business decision-making.
 
-## Before You Start
+The core question is:
 
-1. Rename the repository using the format `SectionName_TeamID_ProjectName`.
-2. Fill in the project details and team table below.
-3. Add the raw dataset to `data/raw/`.
-4. Complete the notebooks in order from `01` to `05`.
-5. Publish the final dashboard and add the public link in `tableau/dashboard_links.md`.
-6. Export the final report and presentation as PDFs into `reports/`.
-
-### Quick Start
-
-If you are working locally:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-jupyter notebook
-```
-
-If you are working in Google Colab:
-
-- Upload or sync the notebooks from `notebooks/`
-- Keep the final `.ipynb` files committed to GitHub
-- Export any cleaned datasets into `data/processed/`
+> Which customer segments, campaign strategies, interaction patterns, and macroeconomic conditions most strongly influence whether a customer subscribes to a term deposit?
 
 ---
 
-## Project Overview
+## Project Highlights
 
-| Field | Details |
-|---|---|
-| **Project Title** | _To be filled by team_ |
-| **Sector** | _e.g. Retail, Finance, Healthcare, EdTech_ |
-| **Team ID** | _e.g. DVA-B1-T3_ |
-| **Section** | _To be filled by team_ |
-| **Faculty Mentor** | _To be filled by team_ |
-| **Institute** | Newton School of Technology |
-| **Submission Date** | _To be filled by team_ |
+| Metric | Value |
+|---|---:|
+| Raw records | 41,188 |
+| Cleaned records | 41,176 |
+| Cleaned columns | 27 |
+| Successful subscriptions | 4,639 |
+| Overall conversion rate | 11.27% |
+| Tableau dashboards | 4 |
+| Statistical tests validated | 6 |
 
-### Team Members
+The dashboard story shows that conversion is not random. Prior campaign success, contact channel, call pressure, customer profile, and interest-rate environment all materially affect subscription outcomes.
 
-| Role | Name | GitHub Username |
-|---|---|---|
-| Project Lead | _Name_ | `github-handle` |
-| Data Lead | _Name_ | `github-handle` |
-| ETL Lead | _Name_ | `github-handle` |
-| Analysis Lead | _Name_ | `github-handle` |
-| Visualization Lead | _Name_ | `github-handle` |
-| Strategy Lead | _Name_ | `github-handle` |
-| PPT and Quality Lead | _Name_ | `github-handle` |
+---
+
+## Dashboard Suite
+
+The Tableau workbook is available at [`tableau/Bank Marketing Dataset.twbx`](tableau/Bank%20Marketing%20Dataset.twbx), with dashboard screenshots stored in [`tableau/screenshots/`](tableau/screenshots/).
+
+### 1. Customer Profile
+
+![Customer Profile](tableau/screenshots/Customer%20Profile.png)
+
+This dashboard profiles the customer base by geography, job type, education, marital status, and loan ownership. It provides the top-level business context before moving into campaign performance.
+
+**Key takeaways**
+
+- Total customer contacts after cleaning: **41,176**.
+- Overall success rate: **11.27%**, confirming the campaign is a low-conversion, high-volume funnel.
+- Admin, blue-collar, and technician customers make up the largest contacted groups.
+- Students and retired customers have the strongest conversion rates, while blue-collar customers lag.
+- The dashboard includes filters for contact date, job type, education, and marital status.
+
+### 2. Campaign Effectiveness
+
+![Campaign Effectiveness](tableau/screenshots/Campain%20Effectiveness.png)
+
+This dashboard evaluates how the bank's outreach strategy affects conversion. It focuses on call intensity, contact channel, campaign month, previous outcome, and recency.
+
+**Key takeaways**
+
+- One-call campaigns convert at **13.04%**, while high-intensity campaigns fall to **5.49%**.
+- Cellular outreach converts at **14.74%**, compared with **5.23%** for telephone.
+- March, December, September, and October show the strongest monthly conversion patterns.
+- Recent and moderately recent contacts convert far better than customers who were never previously contacted.
+- The dashboard supports a campaign strategy shift from volume-heavy calling to targeted, high-quality outreach.
+
+### 3. Interaction History
+
+![Interaction History](tableau/screenshots/Interaction%20History.png)
+
+This dashboard highlights how customer relationship history changes subscription likelihood. It is the strongest evidence that prior engagement should guide future targeting.
+
+**Key takeaways**
+
+- Previously contacted customers: **5,625**.
+- Prior successful customers: **1,373**.
+- Customers with prior campaign success convert at **65.11%**.
+- Cold contacts convert at only **8.83%**.
+- Previous campaign success is the strongest single driver identified in the project.
+
+### 4. Economic Impact
+
+![Economic Impact](tableau/screenshots/Economic%20Impact.png)
+
+This dashboard connects campaign outcomes to macroeconomic conditions such as interest rate, employment variation, consumer confidence, and the derived rate environment.
+
+**Key takeaways**
+
+- Low-rate environments convert at **24.02%**.
+- High-rate environments convert at only **4.83%**.
+- The medium-rate segment is small but shows very high conversion, requiring careful interpretation because of lower sample size.
+- Average interest rate in the cleaned dataset is **3.62%**.
+- The dashboard supports timing campaigns around favorable rate conditions instead of treating every macro period equally.
 
 ---
 
 ## Business Problem
 
-_Describe the sector context, the decision-maker this project serves, and the core business challenge being addressed. Keep this to 3-5 sentences written in plain language, as if addressing a senior stakeholder._
+The bank needs to improve the efficiency of its term deposit marketing campaigns. Historically, the campaign relied on broad phone outreach, but the dataset shows that many contacts do not convert and repeated calling can reduce success. The business goal is to identify the customers, channels, timing, and economic conditions that produce higher conversion so campaign teams can prioritize effort more intelligently.
 
-**Core Business Question**
-
-> _State the single main question your Tableau dashboard and Python analysis will answer._
-
-**Decision Supported**
-
-> _What action or decision will this analysis enable the stakeholder to take?_
+**Decision supported:**  
+Help marketing managers decide whom to contact, how often to contact them, which channel to use, and when campaign timing is most favorable.
 
 ---
 
@@ -77,88 +102,115 @@ _Describe the sector context, the decision-maker this project serves, and the co
 
 | Attribute | Details |
 |---|---|
-| **Source Name** | _e.g. World Bank, data.gov.in, Kaggle (raw only)_ |
-| **Direct Access Link** | _Paste the direct download or access URL_ |
-| **Row Count** | _Must be greater than 5,000_ |
-| **Column Count** | _Must be greater than 8 meaningful columns_ |
-| **Time Period Covered** | _e.g. Jan 2019 to Dec 2023_ |
-| **Format** | _e.g. CSV, JSON, Excel_ |
+| Dataset | Bank Marketing Campaign Dataset |
+| Source | UCI Machine Learning Repository |
+| Institution | Portuguese banking institution |
+| Raw file | [`data/raw/raw_dataset.csv`](data/raw/raw_dataset.csv) |
+| Cleaned file | [`data/processed/cleaned_bank_data.csv`](data/processed/cleaned_bank_data.csv) |
+| Raw shape | 41,188 rows x 21 columns |
+| Clean shape | 41,176 rows x 27 columns |
+| Target variable | `subscription_flag` |
+| Granularity | One row per customer campaign contact |
 
-**Key Columns Used**
+For detailed column definitions, cleaning notes, derived variables, and statistical test mapping, see [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
-| Column Name | Description | Role in Analysis |
-|---|---|---|
-| _column_1_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_2_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_3_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_4_ | _What it means_ | _Used for KPI / filter / segmentation_ |
+---
 
-For full column definitions, see [`docs/data_dictionary.md`](docs/data_dictionary.md).
+## Data Preparation
+
+The cleaned dataset was produced through a structured notebook pipeline:
+
+1. [`01_extraction.ipynb`](notebooks/01_extraction.ipynb) loads and audits the raw campaign dataset.
+2. [`02_cleaning.ipynb`](notebooks/02_cleaning.ipynb) standardizes fields, removes duplicates, handles sentinel values, and creates derived columns.
+3. [`03_eda.ipynb`](notebooks/03_eda.ipynb) explores customer, campaign, history, and economic patterns.
+4. [`04_statistical_analysis.ipynb`](notebooks/04_statistical_analysis.ipynb) validates dashboard findings with ANOVA, Chi-Square tests, correlation, and logistic regression.
+5. [`05_final_load_prep.ipynb`](notebooks/05_final_load_prep.ipynb) prepares the final Tableau-ready extract.
+
+Key cleaning decisions:
+
+- Removed **12 exact duplicate records**.
+- Renamed raw fields into business-readable column names.
+- Converted the target variable into binary `subscription_flag`.
+- Replaced the raw `pdays` sentinel value with `contact_recency`.
+- Capped extreme `num_contacts_campaign` values at 10.
+- Created dashboard-ready features including `age_group`, `call_intensity`, `contacted_before`, `rate_environment`, and `prev_success_flag`.
+- Retained `Unknown` categorical values rather than imputing them to avoid bias.
 
 ---
 
 ## KPI Framework
 
-| KPI | Definition | Formula / Computation |
+| KPI | Definition | Business Use |
 |---|---|---|
-| _e.g. Monthly Revenue Growth %_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-| _e.g. Customer Churn Rate_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-| _e.g. Repeat Purchase Rate_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-
-Document KPI logic clearly in `notebooks/04_statistical_analysis.ipynb` and `notebooks/05_final_load_prep.ipynb`.
+| Conversion Rate | Successful subscriptions / total contacted customers | Primary campaign success metric |
+| Successful Customers | Count of customers with `subscription_flag = 1` | Measures campaign output |
+| Contact Channel Conversion | Conversion rate by `contact_type` | Compares cellular vs telephone performance |
+| Call Intensity Conversion | Conversion rate by `call_intensity` | Finds when additional outreach becomes counterproductive |
+| Prior Success Conversion | Conversion rate where previous campaign outcome was successful | Identifies high-value retargeting group |
+| Cold Contact Conversion | Conversion rate for customers with no previous campaign success | Benchmarks new-customer outreach |
+| Rate Environment Conversion | Conversion rate by low, medium, or high interest-rate environment | Connects marketing timing to macroeconomic context |
 
 ---
 
-## Tableau Dashboard
+## Statistical Validation
 
-| Item | Details |
-|---|---|
-| **Dashboard URL** | _Paste Tableau Public link here_ |
-| **Executive View** | _Describe the high-level KPI summary view_ |
-| **Operational View** | _Describe the detailed drill-down view_ |
-| **Main Filters** | _List the interactive filters used_ |
+The project validates dashboard patterns using formal tests at alpha = 0.05.
 
-Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) and document the public links in [`tableau/dashboard_links.md`](tableau/dashboard_links.md).
+| Question | Feature | Test | Result | Dashboard |
+|---|---|---|---|---|
+| Do age groups convert differently? | `age_group` | ANOVA | Significant | Customer Profile |
+| Is job type associated with subscription? | `job_type` | Chi-Square | Significant | Customer Profile |
+| Does call intensity affect conversion? | `call_intensity` | ANOVA | Significant | Campaign Effectiveness |
+| Does contact channel matter? | `contact_type` | Chi-Square | Significant | Campaign Effectiveness |
+| Does prior campaign success predict current success? | `prev_success_flag` | Chi-Square | Highly significant | Interaction History |
+| Does rate environment affect subscription? | `rate_environment` | ANOVA | Significant | Economic Impact |
+
+The statistical analysis confirms that the Tableau insights are not only visual patterns: customer demographics, campaign strategy, relationship history, and macroeconomic conditions all measurably influence subscription outcomes.
 
 ---
 
 ## Key Insights
 
-_List 8-12 major findings from the analysis, written in decision language. Each insight should tell the reader what to think or act upon, not merely describe a chart._
-
-1. _Insight 1_
-2. _Insight 2_
-3. _Insight 3_
-4. _Insight 4_
-5. _Insight 5_
-6. _Insight 6_
-7. _Insight 7_
-8. _Insight 8_
+1. Prior campaign success is the strongest conversion signal: prior-success customers convert at **65.11%** versus **9.41%** for others.
+2. Cold outreach is inefficient: customers with no previous campaign outcome convert at only **8.83%**.
+3. Recency matters: recently contacted customers convert at **65.76%**, while never-contacted customers convert at **9.26%**.
+4. Cellular is the better channel: **14.74%** conversion versus **5.23%** for telephone.
+5. More calls do not mean more success: conversion declines from **13.04%** for one-call customers to **5.49%** for high-intensity contacts.
+6. Students and retired customers are high-value segments, converting at **31.43%** and **25.26%** respectively.
+7. Blue-collar customers form a large contacted group but convert at only **6.90%**, suggesting a need for different messaging or lower prioritization.
+8. Low-rate environments are much more favorable than high-rate periods: **24.02%** conversion versus **4.83%**.
+9. Macroeconomic variables are highly related, so `rate_environment` is the clearest Tableau dimension for business interpretation.
+10. Call duration is strongly associated with conversion but should be treated as a post-call diagnostic, not a pre-call targeting variable.
 
 ---
 
 ## Recommendations
 
-_Provide 3-5 specific, actionable business recommendations, each linked directly to an insight above._
-
-| # | Insight | Recommendation | Expected Impact |
+| # | Recommendation | Evidence | Expected Impact |
 |---|---|---|---|
-| 1 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 2 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 3 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
+| 1 | Prioritize customers with previous campaign success and recent contact history. | Prior-success conversion is **65.11%**; recently contacted conversion is **65.76%**. | Higher conversion with fewer wasted calls. |
+| 2 | Shift campaign contact strategy toward cellular outreach. | Cellular conversion is **14.74%** vs **5.23%** for telephone. | Better channel efficiency and higher subscription yield. |
+| 3 | Limit repeated calling and avoid over-contacting customers. | Conversion drops from **13.04%** at one call to **5.49%** at high intensity. | Lower customer fatigue and better agent productivity. |
+| 4 | Segment campaign messaging for students and retired customers. | Students convert at **31.43%** and retired customers at **25.26%**. | Stronger targeting of naturally receptive groups. |
+| 5 | Time aggressive campaigns during low-rate environments. | Low-rate conversion is **24.02%** vs **4.83%** in high-rate conditions. | Improved campaign timing and budget allocation. |
 
 ---
 
 ## Repository Structure
 
 ```text
-SectionName_TeamID_ProjectName/
+Section_C_Group_11_Bank_Marketing_Dataset/
 |
 |-- README.md
 |
 |-- data/
-|   |-- raw/                         # Original dataset (never edited)
-|   `-- processed/                   # Cleaned output from ETL pipeline
+|   |-- raw/
+|   |   `-- raw_dataset.csv
+|   `-- processed/
+|       `-- cleaned_bank_data.csv
+|
+|-- docs/
+|   `-- data_dictionary.md
 |
 |-- notebooks/
 |   |-- 01_extraction.ipynb
@@ -171,16 +223,18 @@ SectionName_TeamID_ProjectName/
 |   `-- etl_pipeline.py
 |
 |-- tableau/
-|   |-- screenshots/
-|   `-- dashboard_links.md
+|   |-- Bank Marketing Dataset.twbx
+|   |-- dashboard_links.md
+|   `-- screenshots/
+|       |-- Customer Profile.png
+|       |-- Campain Effectiveness.png
+|       |-- Interaction History.png
+|       `-- Economic Impact.png
 |
 |-- reports/
 |   |-- README.md
 |   |-- project_report_template.md
 |   `-- presentation_outline.md
-|
-|-- docs/
-|   `-- data_dictionary.md
 |
 |-- DVA-oriented-Resume/
 `-- DVA-focused-Portfolio/
@@ -188,118 +242,46 @@ SectionName_TeamID_ProjectName/
 
 ---
 
-## Analytical Pipeline
-
-The project follows a structured 7-step workflow:
-
-1. **Define** - Sector selected, problem statement scoped, mentor approval obtained.
-2. **Extract** - Raw dataset sourced and committed to `data/raw/`; data dictionary drafted.
-3. **Clean and Transform** - Cleaning pipeline built in `notebooks/02_cleaning.ipynb` and optionally `scripts/etl_pipeline.py`.
-4. **Analyze** - EDA and statistical analysis performed in notebooks `03` and `04`.
-5. **Visualize** - Interactive Tableau dashboard built and published on Tableau Public.
-6. **Recommend** - 3-5 data-backed business recommendations delivered.
-7. **Report** - Final project report and presentation deck completed and exported to PDF in `reports/`.
-
----
-
 ## Tech Stack
 
-| Tool | Status | Purpose |
-|---|---|---|
-| Python + Jupyter Notebooks | Mandatory | ETL, cleaning, analysis, and KPI computation |
-| Google Colab | Supported | Cloud notebook execution environment |
-| Tableau Public | Mandatory | Dashboard design, publishing, and sharing |
-| GitHub | Mandatory | Version control, collaboration, contribution audit |
-| SQL | Optional | Initial data extraction only, if documented |
+| Tool | Purpose |
+|---|---|
+| Python | Data extraction, cleaning, EDA, statistical analysis |
+| Jupyter Notebook | Reproducible analytical workflow |
+| Tableau | Interactive dashboard design and presentation |
+| GitHub | Version control and project collaboration |
+| CSV | Raw and processed data storage |
 
-**Recommended Python libraries:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`, `statsmodels`
-
----
-
-## Evaluation Rubric
-
-| Area | Marks | Focus |
-|---|---|---|
-| Problem Framing | 10 | Is the business question clear and well-scoped? |
-| Data Quality and ETL | 15 | Is the cleaning pipeline thorough and documented? |
-| Analysis Depth | 25 | Are statistical methods applied correctly with insight? |
-| Dashboard and Visualization | 20 | Is the Tableau dashboard interactive and decision-relevant? |
-| Business Recommendations | 20 | Are insights actionable and well-reasoned? |
-| Storytelling and Clarity | 10 | Is the presentation professional and coherent? |
-| **Total** | **100** | |
-
-> Marks are awarded for analytical thinking and decision relevance, not chart quantity, visual decoration, or code length.
+Recommended Python libraries are listed in [`requirements.txt`](requirements.txt).
 
 ---
 
-## Submission Checklist
+## How To Run Locally
 
-**GitHub Repository**
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+jupyter notebook
+```
 
-- [ ] Public repository created with the correct naming convention (`SectionName_TeamID_ProjectName`)
-- [ ] All notebooks committed in `.ipynb` format
-- [ ] `data/raw/` contains the original, unedited dataset
-- [ ] `data/processed/` contains the cleaned pipeline output
-- [ ] `tableau/screenshots/` contains dashboard screenshots
-- [ ] `tableau/dashboard_links.md` contains the Tableau Public URL
-- [ ] `docs/data_dictionary.md` is complete
-- [ ] `README.md` explains the project, dataset, and team
-- [ ] All members have visible commits and pull requests
-
-**Tableau Dashboard**
-
-- [ ] Published on Tableau Public and accessible via public URL
-- [ ] At least one interactive filter included
-- [ ] Dashboard directly addresses the business problem
-
-**Project Report**
-
-- [ ] Final report exported as PDF into `reports/`
-- [ ] Cover page, executive summary, sector context, problem statement
-- [ ] Data description, cleaning methodology, KPI framework
-- [ ] EDA with written insights, statistical analysis results
-- [ ] Dashboard screenshots and explanation
-- [ ] 8-12 key insights in decision language
-- [ ] 3-5 actionable recommendations with impact estimates
-- [ ] Contribution matrix matches GitHub history
-
-**Presentation Deck**
-
-- [ ] Final presentation exported as PDF into `reports/`
-- [ ] Title slide through recommendations, impact, limitations, and next steps
-
-**Individual Assets**
-
-- [ ] DVA-oriented resume updated to include this capstone
-- [ ] Portfolio link or project case study added
+Open the notebooks in numeric order from `01_extraction.ipynb` through `05_final_load_prep.ipynb`. Open the Tableau workbook from [`tableau/Bank Marketing Dataset.twbx`](tableau/Bank%20Marketing%20Dataset.twbx) to inspect or modify the dashboard suite.
 
 ---
 
-## Contribution Matrix
+## Current Deliverables
 
-This table must match evidence in GitHub Insights, PR history, and committed files.
-
-| Team Member | Dataset and Sourcing | ETL and Cleaning | EDA and Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT and Viva |
-|---|---|---|---|---|---|---|---|
-| _Member 1_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 2_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 3_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 4_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 5_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 6_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-
-_Declaration: We confirm that the above contribution details are accurate and verifiable through GitHub Insights, PR history, and submitted artifacts._
-
-**Team Lead Name:** _____________________________
-
-**Date:** _______________
+- Cleaned dataset: [`data/processed/cleaned_bank_data.csv`](data/processed/cleaned_bank_data.csv)
+- Data dictionary: [`docs/data_dictionary.md`](docs/data_dictionary.md)
+- Analysis notebooks: [`notebooks/`](notebooks/)
+- Tableau workbook: [`tableau/Bank Marketing Dataset.twbx`](tableau/Bank%20Marketing%20Dataset.twbx)
+- Dashboard screenshots: [`tableau/screenshots/`](tableau/screenshots/)
+- Report support files: [`reports/`](reports/)
 
 ---
 
-## Academic Integrity
+## Conclusion
 
-All analysis, code, and recommendations in this repository must be the original work of the team listed above. Free-riding is tracked via GitHub Insights and pull request history. Any mismatch between the contribution matrix and actual commit history may result in individual grade adjustments.
+The campaign should move from broad outreach to evidence-led targeting. The strongest opportunities are retargeting customers with successful prior outcomes, using cellular contact, reducing overcalling, prioritizing high-conversion customer segments, and timing campaigns around favorable interest-rate environments.
 
----
-
-*Newton School of Technology - Data Visualization & Analytics | Capstone 2*
+Together, the Python analysis and Tableau dashboards provide a complete decision framework for improving term deposit campaign conversion.
