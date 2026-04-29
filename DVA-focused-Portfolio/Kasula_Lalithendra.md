@@ -59,6 +59,16 @@ This portfolio highlights expertise across the modern data stack:
 - `favicon.svg` - Custom data-themed vector favicon.
 - `assets/images/` - High-fidelity dashboard screenshots and mockups used in the portfolio.
 
+## Tools Used
+
+| Category | Tools |
+|----------|-------|
+| Languages | Python, SQL, HTML, CSS, JavaScript |
+| Frameworks | Next.js, React |
+| Data Tools | Pandas, Google Sheets, Tableau, Jupyter Notebook |
+| Deployment | GitHub, Vercel |
+
+
 ## Purpose
 
 This portfolio was explicitly engineered to be **100% data-focused**. It purposefully excludes irrelevant full-stack or generic software engineering projects to provide recruiters, hiring managers, and data teams with a clear, distraction-free view of my ability to extract, clean, analyze, and visualize data to solve complex business problems.
