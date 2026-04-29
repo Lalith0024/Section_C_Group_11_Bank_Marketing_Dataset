@@ -292,14 +292,14 @@ Together, the Python analysis and Tableau dashboards provide a complete decision
 
 This table must match evidence in GitHub Insights, PR history, and committed files.
 
-| Team Member            | Dataset and Sourcing | ETL and Cleaning | EDA and Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT       |
-| :--------------------- | :------------------- | :--------------- | :--------------- | :------------------- | :---------------- | :------------- | :-------- |
-| **Abhayanth K**        | Support              | Support          | Support          | Support              | Support           | **Owner**      | Support   |
-| **Kasula Lalithendra** | Support              | **Owner**        | **Owner**        | Support              | Support           | Support        | Support   |
-| **Jagruthi Pulumati**  | **Owner**            | **Owner**        | Support          | Support              | **Owner**         | Support        | Support   |
-| **Sachin Jaiswal**     | Support              | **Owner**        | Support          | Support              | Support           | Support        | **Owner** |
-| **Ankit Raj Singh**    | Support              | Support          | Support          | **Owner**            | Support           | Support        | Support   |
-| **Varun Sharma**       | —                    | —                | —                | —                    | —                 | Support        | —         |
+| Team Member            | Dataset & Sourcing | ETL & Cleaning | EDA & Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT       |
+| :--------------------- | :----------------- | :------------- | :------------- | :------------------- | :---------------- | :------------- | :-------- |
+| **Abhayanth K**        | Support            | Support        | Support        | Support              | Support           | **Owner**      | Support   |
+| **Kasula Lalithendra** | Support            | **Owner**      | **Owner**      | Support              | Support           | Support        | Support   |
+| **Jagruthi Pulumati**  | **Owner**          | **Owner**      | Support        | Support              | **Owner**         | Support        | **Owner** |
+| **Sachin Jaiswal**     | Support            | **Owner**      | Support        | Support              | Support           | Support        | **Owner** |
+| **Ankit Raj Singh**    | Support            | Support        | Support        | **Owner**            | Support           | Support        | Support   |
+| **Varun Sharma**       | —                  | Support        | Support        | Support              | —                 | Support        | —         |
 
 **Declaration:** We confirm that the above contribution details are accurate and verifiable through GitHub Insights, PR history, and submitted artifacts.
 
