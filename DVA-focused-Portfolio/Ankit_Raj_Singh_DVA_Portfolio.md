@@ -237,18 +237,6 @@ The analysis is delivered through an interactive Google Sheets dashboard featuri
 | Deployment | GitHub, Vercel |
 
 ---
-
-## Portfolio Structure
-
-```
-dva-portfolio-omega/
-├── src/               # Next.js source code (components, pages, styles)
-├── public/            # Static assets (images, dashboard screenshots)
-└── next.config.ts     # Configuration for the Next.js application
-```
-
----
-
 ## Purpose
 
 This portfolio was created to convert DVA capstone work into a clear, accessible, and deployable case-study format. It is designed so evaluators, mentors, recruiters, or teammates can quickly understand the business problem, data work, dashboard output, insights, and impact of each project.
